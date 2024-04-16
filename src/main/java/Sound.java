@@ -28,8 +28,6 @@ public class Sound
     return num;
   }
 
-
-
   /** Removes all silence from the beginning of this sound.
    *  Silence is represented by a value of 0.
    *  Precondition: samples contains at least one nonzero value
@@ -37,6 +35,16 @@ public class Sound
    */
   public void trimSilenceFromBeginning()
   {
-    /* to be implemented in part (b) */
+    ArrayList <Integer> ans = new ArrayList <Integer> ();
+    for(int i = 0; i<samples.length; i++){
+      ans.add(samples[i]);
+    }
+    while(ans.get(0) == 0)
+      ans.remove(0);
+
+    samples = new int[ans.size()];
+    for(int i = 0; i<ans.size(); i++){
+      samples[i] = ans.get(i);
+    }
   }
 }
